@@ -52,7 +52,7 @@ cursor = connection.cursor()
 cursor.execute("""CREATE TABLE revenue (Date, Revenue)""")
 
 tesla_tuples = list(tesla_revenue.to_records(index = False))
-tesla_tuples[:5]
+
 
 cursor.executemany("INSERT INTO revenue VALUES (?,?)", tesla_tuples)
 connection.commit()
